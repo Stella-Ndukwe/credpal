@@ -1,0 +1,26 @@
+{
+  "name": "credpal",
+  "version": "1.0",
+  "description": "This project is for credpal assessment",
+  "main": "index.js",
+  "scripts": {
+    "cypress:runner": "cypress open --e2e --browser chrome",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*",
+    "cypress:execution-tags-home": "cypress run --env tags=@homePage",
+    "cypress:execution-tags-affiliates": "cypress run --env tags=@affiliates"
+    
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Stella Ndukwe",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "2.1",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "cypress": "^13.7.1",
+    "esbuild": "^0.16.4",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  }
+}
