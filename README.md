@@ -1,42 +1,78 @@
-# cypress-cucumber-boilerplate-for-e2e-testing
+Here's a README file for the CredPal tests including the provided scripts from the package.json:
 
-<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQF1dg2KtKFdPg/company-logo_200_200/0/1626295436859?e=2159024400&v=beta&t=Ib_T9PXXQxkHRKnj3Oe65EKuR6EAh01IgAA6IGvU0FY" alt="exemplo imagem">
+````markdown
+# Cypress Tests
 
-> Cypress 10+ with Cucumber boilerplate project.
+This repository contains end-to-end (E2E) tests for the application using Cypress.
 
-### 💻 Topics
+## Setup
 
-Integrated with:
+1. Clone the repository:
 
-- [x] https://github.com/badeball/cypress-cucumber-preprocessor
-- [x] https://github.com/bahmutov/cypress-esbuild-preprocessor
-- [x] https://www.npmjs.com/package/multiple-cucumber-html-reporter
-- [x] https://github.com/cucumber/json-formatter
-- [x] https://github.com/Shelex/cypress-allure-plugin
+```bash
+git clone <repository-url>
+cd <repository-folder>
+```
+````
 
-(+ bundlers: https://github.com/badeball/cypress-cucumber-preprocessor/tree/master/examples)
+2. Install dependencies:
 
-- ## 💻 Pre-requisites
+```bash
+npm install --legacy-peer-deps
+```
 
-1. Node JS
-2. Optional: Java 8 for Allure Reporter
-3. Optional: Json-formatter for Native Reporter option(depends on your OS: https://github.com/cucumber/json-formatter)
+## Running Tests
 
-## 🚀 Install the project
+### Cypress Test Runner
 
-Install project dependencies with: npm i
+To open the Cypress Test Runner GUI:
 
-## Run the demo:
+```bash
+npm run cypress:runner
+```
 
-1. Standard Execution: npm run cypress:execution
-2. Native report(with JSON FORMATTER): Check how to do it in this video: [Cucumber BDD Report - YouTube](https://www.youtube.com/watch?v=5AGXK9cL2fs&t=2s&ab_channel=JoanMedia)
-3. Allure Report: 
-   1. npm run cypress:execution-allure
-   2. npm run allure:report
-   3. allure open
-   4. You'll get a report like this one: GitHub Page - Allure Report Sample: https://joanesquivel.github.io/cypress-cucumber-boilerplate/
+### Executing Tests
 
+To run all E2E tests:
 
-##  Sample repo to generate an allure report as an artifact using GH Actions
+```bash
+npm run cypress:execution
+```
 
-* https://github.com/SeyiOG/newCyLearn2/blob/main/.github/workflows/cypress-allure-report.yml
+To run tests specifically for the Home page:
+
+```bash
+npm run cypress:execution-tags-home
+```
+
+To run tests specifically for the Affiliates page:
+
+```bash
+npm run cypress:execution-tags-affiliates
+```
+
+## Writing Tests
+
+1. Navigate to the `cypress/e2e/features` directory.
+
+2. Write your feature files using Gherkin syntax.
+
+3. Create corresponding step definitions in the `cypress/e2e/step_definitions` directory.
+
+## Folder Structure
+
+- `cypress/e2e`: Contains the feature files and step definitions.
+- `cypress/support`: Contains support files like commands.js and e2e.js.
+- `cypress/pages`: Contains page object used for customizing Cypress tests.
+
+## Scripts
+
+- `cypress:runner`: Opens the Cypress Test Runner GUI in Chrome browser.
+- `cypress:execution`: Executes all E2E tests headlessly.
+- `cypress:execution-tags-home`: Executes tests tagged with @homePage.
+- `cypress:execution-tags-affiliates`: Executes tests tagged with @affiliates.
+
+```
+
+You can add this README file to your project's root directory to provide instructions on setting up, running, and writing Cypress tests. It also includes information about folder structure, scripts, and how to contribute to the tests.
+```
