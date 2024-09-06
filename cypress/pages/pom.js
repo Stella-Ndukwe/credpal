@@ -18,6 +18,9 @@ export class Pages {
   inputField(id, text) {
     cy.get(`#${id}`).type(text);
   }
+  inputPhoneNumber(text) {
+    cy.get("#phone").clear().type(text);
+  }
   creditCheckBox() {
     cy.get(".gap-5 > :nth-child(1)").click();
   }

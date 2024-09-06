@@ -8,6 +8,9 @@ Given("User is on {string} page", (page) => {
 When("I type {string} on {string}", (el, text) => {
   allPage.inputField(text, el);
 });
+When("I type {string} on phone field", (text) => {
+  allPage.inputPhoneNumber(text);
+});
 
 When("I ensure {string} is checked", (s) => {
   allPage.elCheck(s);

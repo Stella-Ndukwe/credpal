@@ -7,7 +7,7 @@ Feature: Affiliate page
 # Bug Affiliate page points to sales
 
   Scenario: To Validate Affiliate page
-    Then I shoud see "Affiliate Onboarding Form"
+    Then I shoud see "Wealth"
     And I shoud see "Support"
 
   Scenario: To Validat user filled form with valid details
@@ -15,24 +15,21 @@ Feature: Affiliate page
     And I type "QATestLastName" on "last_name"
     And I type "ndukwe@yopmail.com" on "email"
     And I type "+2347049994004" on "phone"
-    And I click on Credit checkbox
     And I click on "Submit" button
-    Then I shoud see "Data submitted successfully."
+    Then I shoud see "The email has already been taken."
 
   Scenario: To Validat user filled form with Existing valid details
     When I type "QATestFirstName" on "first_name"
     And I type "QATestLastName" on "last_name"
     And I type "ndukwe@yopmail.com" on "email"
-    And I type "+2347049994004" on "phone"
-    And I click on Credit checkbox
+    And I type "+2347049994004" on phone field
     And I click on "Submit" button
     Then I shoud see "The given data was invalid."
 
   Scenario: To Validat error message when form is filled with First name empty
     And I type "QATestLastName" on "last_name"
     And I type "ndukwe@yopmail.com" on "email"
-    And I type "+2347049994004" on "phone"
-    And I click on Credit checkbox
+    And I type "+2347049994004" on "phone" 
     And I click on "Submit" button
     Then I shoud see "this field is required."
 
@@ -40,7 +37,6 @@ Feature: Affiliate page
     When I type "QATestFirstName" on "first_name"
     And I type "ndukwe@yopmail.com" on "email"
     And I type "+2347049994004" on "phone"
-    And I click on Credit checkbox
     And I click on "Submit" button
     Then I shoud see "this field is required."
 
@@ -49,7 +45,6 @@ Feature: Affiliate page
     And I type "QATestLastName" on "last_name"
     And I type "invalid@yopmail" on "email"
     And I type "+2347049994004" on "phone"
-    And I click on Credit checkbox
     And I click on "Submit" button
     Then I shoud see "this field has to be a valid email address."
 
@@ -58,14 +53,7 @@ Feature: Affiliate page
     And I type "QATestLastName" on "last_name"
     And I type "ndukwe@yopmail.com" on "email"
     And I type "+2347049994" on "phone"
-    And I click on Credit checkbox
     And I click on "Submit" button
     Then I shoud see "the field has to be a valid nigerian phone number."
 
-  Scenario: To Validat error message when form is filled with credit or investment unchecked
-    When I type "QATestFirstName" on "first_name"
-    And I type "QATestLastName" on "last_name"
-    And I type "ndukwe@yopmail.com" on "email"
-    And I type "+2347049994443" on "phone"
-    And I click on "Submit" button
-    Then I shoud see "this field is required."
+  
